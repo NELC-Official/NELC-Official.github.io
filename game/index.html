@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content" />
+  <title>小游戏 | NeuroEcho Literary Community</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+KuaiLe&display=swap');
+    /* ── 浅色变量 ── */
+    :root {
+      --bg: #f3ead7;
+      --card: rgba(255, 252, 244, 0.95);
+      --text: #5a4e42;
+      --text-dim: #8b7a6b;
+      --accent: #ed8941;
+      --accent-glow: rgba(237, 137, 65, 0.3);
+      --brown: #8b6a52;
+      --danger: #c0392b;
+      --success: #27ae60;
+      --zone-bg: rgba(0, 0, 0, 0.35);
+      --zone-border: rgba(139, 106, 82, 0.4);
+      --zone-shadow: 0 0 40px rgba(0, 0, 0, 0.25), inset 0 0 60px rgba(0, 0, 0, 0.08);
+      --ground-color: rgba(255, 255, 255, 0.4);
+      --overlay-bg: rgba(243, 234, 215, 0.92);
+      --input-bg: rgba(255, 252, 244, 0.95);
+      --word-bg: rgba(255, 252, 244, 0.92);
+      --word-border: rgba(176, 120, 83, 0.35);
+      --word-targeted-bg: rgba(237, 137, 65, 0.1);
+      --hud-bg: rgba(255, 252, 244, 0.9);
+      --hud-border: rgba(176, 120, 83, 0.15);
+      --back-bg: rgba(255, 252, 244, 0.9);
+      --back-border: rgba(176, 120, 83, 0.2);
+    }
+    /* ── 暗色变量 ── */
+    [data-theme="dark"] {
+      --bg: #1a1612;
+      --card: rgba(38, 32, 26, 0.95);
+      --text: #d4c8b8;
+      --text-dim: #9e8e7d;
+      --accent: #f0a060;
+      --accent-glow: rgba(240, 160, 96, 0.3);
+      --brown: #b89a7a;
+      --danger: #e74c3c;
+      --success: #2ecc71;
+      --zone-bg: rgba(0, 0, 0, 0.55);
+      --zone-border: rgba(176, 120, 83, 0.25);
+      --zone-shadow: 0 0 50px rgba(0, 0, 0, 0.5), inset 0 0 60px rgba(0, 0, 0, 0.15);
+      --ground-color: rgba(255, 255, 255, 0.15);
+      --overlay-bg: rgba(26, 22, 18, 0.92);
+      --input-bg: rgba(38, 32, 26, 0.95);
+      --word-bg: rgba(42, 34, 24, 0.92);
+      --word-border: rgba(176, 120, 83, 0.25);
+      --word-targeted-bg: rgba(240, 160, 96, 0.12);
+      --hud-bg: rgba(38, 32, 26, 0.9);
+      --hud-border: rgba(176, 120, 83, 0.12);
+      --back-bg: rgba(38, 32, 26, 0.9);
+      --back-border: rgba(176, 120, 83, 0.15);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg);
+      background-image: url("/image/background.webp");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: 'Noto Serif SC', serif;
+      color: var(--text);
+      min-height: 100vh;
+      overflow: hidden;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    /* ── 暗色模式切换按钮 ── */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      z-index: 100;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--back-border);
+      background: var(--back-bg);
+      color: var(--brown);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(6px);
+    }
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      color: var(--accent);
+    }
+    /* ── 回到主页链接 ── */
+    .back-link {
+      position: fixed;
+      top: 20px;
+      left: 24px;
+      z-index: 100;
+      color: var(--brown);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--back-bg);
+      border-radius: 8px;
+      border: 1px solid var(--back-border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(6px);
+      font-family: 'Noto Serif SC', serif;
+      cursor: pointer;
+    }
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      color: var(--accent);
+    }
+    /* ── 游戏容器 ── */
+    .game-wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    /* ── 顶部信息栏 ── */
+    .game-hud {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      padding: 14px 28px;
+      margin-top: 14px;
+      background: var(--hud-bg);
+      border-radius: 10px;
+      border: 1px solid var(--hud-border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      z-index: 10;
+      font-size: 0.9rem;
+      backdrop-filter: blur(6px);
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(176, 120, 83, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(176, 120, 83, 0.03) 0%, transparent 50%),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          rgba(139, 106, 82, 0.065) 20px,
+          rgba(139, 106, 82, 0.065) 21px
+        );
+    }
+    .hud-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hud-item i { color: var(--accent); font-size: 1rem; }
+    .hud-label { color: var(--text-dim); }
+    .hud-value {
+      font-weight: 700;
+      font-family: 'ZCOOL KuaiLe', sans-serif;
+      font-size: 1.1rem;
+      min-width: 28px;
+      text-align: center;
+    }
+    /* ── 生命条 ── */
+    .health-bar { display: flex; gap: 3px; }
+    .heart { font-size: 1rem; transition: all 0.3s ease; }
+    .heart.lost { opacity: 0.2; transform: scale(0.8); }
+    /* ── 下落区域 ── */
+    .game-canvas {
+      flex: 1;
+      width: 90%;
+      max-width: 800px;
+      position: relative;
+      margin: 14px auto 14px;
+      background: var(--zone-bg);
+      border: 2px solid var(--zone-border);
+      border-radius: 12px;
+      box-shadow: var(--zone-shadow);
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+    }
+    /* 顶部渐暗 + 底部渐暗 */
+    .game-canvas::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.08) 0%,
+        transparent 15%,
+        transparent 80%,
+        rgba(0,0,0,0.12) 100%
+      );
+      pointer-events: none;
+      border-radius: 10px;
+    }
+    /* ── 底部地面线 ── */
+    .ground-line {
+      position: absolute;
+      bottom: 70px;
+      left: 8%;
+      right: 8%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--ground-color), transparent);
+    }
+    .cursor-follower {
+      position: fixed;
+      width: 50px;
+      height: auto;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(10%, -10%);
+      image-rendering: auto;
+    }
+    /* ── 下落文字 ── */
+    .falling-word {
+      position: absolute;
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--brown);
+      background: var(--word-bg);
+      padding: 6px 14px;
+      border-radius: 4px;
+      border: 1.5px solid var(--word-border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      white-space: nowrap;
+      cursor: default;
+      user-select: none;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      backdrop-filter: blur(3px);
+    }
+    .falling-word.targeted {
+      border-color: var(--accent);
+      background: var(--word-targeted-bg);
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+    .falling-word .matched { color: var(--accent); }
+    .falling-word .unmatched { color: var(--brown); }
+    /* ── 消灭特效 ── */
+    @keyframes word-destroy {
+      0% { transform: scale(1); opacity: 1; }
+      30% { transform: scale(1.2); opacity: 0.8; }
+      100% { transform: scale(0); opacity: 0; }
+    }
+    .falling-word.destroyed {
+      animation: word-destroy 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      background: rgba(237, 137, 65, 0.2);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    /* ── 落地失败 ── */
+    @keyframes word-fail {
+      0% { opacity: 1; }
+      50% { color: var(--danger); border-color: var(--danger); }
+      100% { opacity: 0; transform: translateY(20px); }
+    }
+    .falling-word.failed {
+      animation: word-fail 0.5s ease forwards;
+    }
+    /* ── 输入框 ── */
+    .input-area {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    .input-area input {
+      width: 320px;
+      padding: 12px 22px;
+      font-size: 1.1rem;
+      font-family: 'Noto Serif SC', serif;
+      color: var(--text);
+      background: var(--input-bg);
+      border: 2px solid var(--zone-border);
+      border-radius: 6px;
+      outline: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      text-align: center;
+      letter-spacing: 2px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(6px);
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 15px,
+          rgba(139, 106, 82, 0.05) 15px,
+          rgba(139, 106, 82, 0.05) 16px
+        );
+    }
+    .input-area input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 4px 24px var(--accent-glow);
+    }
+    .input-area input::placeholder {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+    /* ── 得分弹出 ── */
+    @keyframes score-pop {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-50px) scale(1.3); }
+    }
+    .score-popup {
+      position: absolute;
+      font-family: 'ZCOOL KuaiLe', sans-serif;
+      font-size: 1.3rem;
+      color: var(--accent);
+      pointer-events: none;
+      animation: score-pop 0.8s ease forwards;
+    }
+    /* ── 加速提示 ── */
+    @keyframes speed-flash {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+      20% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+      80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+    }
+    .speed-up-notice {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'ZCOOL KuaiLe', sans-serif;
+      font-size: 1.8rem;
+      color: var(--accent);
+      text-shadow: 0 0 20px var(--accent-glow);
+      pointer-events: none;
+      animation: speed-flash 1.2s ease forwards;
+      z-index: 20;
+      white-space: nowrap;
+    }
+    /* ── 覆盖层 ── */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--overlay-bg);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      transition: opacity 0.5s ease;
+    }
+    .overlay.hidden { opacity: 0; pointer-events: none; }
+    .overlay-card {
+      background: var(--card);
+      border: 1px solid var(--zone-border);
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+      padding: 44px 52px;
+      text-align: center;
+      max-width: 440px;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(176, 120, 83, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(176, 120, 83, 0.03) 0%, transparent 50%),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          rgba(139, 106, 82, 0.05) 20px,
+          rgba(139, 106, 82, 0.05) 21px
+        );
+    }
+    .game-title {
+      font-family: 'ZCOOL KuaiLe', sans-serif;
+      font-size: 2.6rem;
+      color: var(--brown);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .game-title span { color: var(--accent); }
+    .game-subtitle {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .difficulty-select {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      justify-content: center;
+    }
+    .diff-btn {
+      padding: 9px 20px;
+      border: 2px solid var(--zone-border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--brown);
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .diff-btn:hover, .diff-btn.active {
+      border-color: var(--accent);
+      background: var(--word-targeted-bg);
+      color: var(--accent);
+    }
+    .diff-btn.active {
+      background: var(--accent);
+      color: #fff;
+    }
+    .diff-desc {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+      min-height: 1.6em;
+    }
+    .start-btn {
+      display: inline-block;
+      padding: 13px 44px;
+      font-family: 'ZCOOL KuaiLe', sans-serif;
+      font-size: 1.25rem;
+      color: #fff;
+      background: linear-gradient(135deg, #ed8941, #d4723a);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(237, 137, 65, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .start-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 24px rgba(237, 137, 65, 0.4);
+    }
+    .start-btn:active { transform: translateY(1px); }
+    [data-theme="dark"] .start-btn {
+      background: linear-gradient(135deg, #f0a060, #c87030);
+    }
+    /* ── 结算 ── */
+    .result-stats { margin: 20px 0 24px; }
+    .result-stat {
+      display: flex;
+      justify-content: space-between;
+      padding: 9px 0;
+      border-bottom: 1px dashed var(--zone-border);
+      font-size: 0.9rem;
+    }
+    .result-stat:last-child { border: none; }
+    .result-stat .label { color: var(--text-dim); }
+    .result-stat .value { font-weight: 700; color: var(--brown); }
+    .result-stat .value.highlight { color: var(--accent); font-size: 1.05rem; }
+    /* ── 连击提示 ── */
+    .combo-display {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.8);
+      font-family: 'ZCOOL KuaiLe', sans-serif;
+      font-size: 1.6rem;
+      color: var(--accent);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      z-index: 10;
+      text-shadow: 0 2px 8px var(--accent-glow);
+      pointer-events: none;
+    }
+    .combo-display.show {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+    /* ── 响应式 ── */
+    @media (max-width: 1020px) {
+      /* 顶部按钮：考虑系统状态栏安全区 */
+      .back-link, .theme-toggle {
+        top: max(env(safe-area-inset-top, 0px) + 8px, 44px);
+      }
+      .back-link { left: 12px; padding: 6px 12px; font-size: 0.82rem; }
+      .theme-toggle { right: 12px; width: 36px; height: 36px; font-size: 1rem; }
+      /* HUD 下移，避开顶部按钮 */
+      .game-hud {
+        margin-top: max(env(safe-area-inset-top, 0px) + 52px, 96px);
+        gap: 8px;
+        padding: 8px 10px;
+        font-size: 0.72rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hud-value { font-size: 0.9rem; min-width: 22px; }
+      /* 游戏区 */
+      .game-canvas { width: 96%; border-radius: 8px; margin: 6px auto 6px; }
+      .overlay-card { padding: 28px 18px; margin: 0 12px; max-width: 92vw; }
+      .game-title { font-size: 1.8rem; }
+      .input-area input {
+        width: 80vw;
+        max-width: 300px;
+        font-size: 1rem;
+        padding: 10px 16px;
+      }
+      .difficulty-select { flex-wrap: wrap; }
+      /* 移动端不需要鼠标跟随 */
+      .cursor-follower { display: none; }
+    }
+    /* 虚拟键盘弹出时用 dvh 保持布局 */
+    @supports (height: 100dvh) {
+      @media (max-width: 1020px) {
+        body { min-height: 100dvh; overflow: hidden; }
+        .game-wrapper { height: 100dvh; }
+      }
+    }
+    /* 首次进入动画 */
+    @keyframes page-fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes list-bounce-in {
+      0%   { transform: translateY(-50px); opacity: 0; }
+      40%  { transform: translateY(6px);   opacity: 1; }
+      65%  { transform: translateY(-3px); }
+      80%  { transform: translateY(1.5px); }
+      100% { transform: translateY(0); }
+    }
+    body {
+      animation: page-fade-in 0.4s ease;
+    }
+    #listOverlay .overlay-card {
+      animation: list-bounce-in 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+  </style>
+</head>
+<body>
+  <button class="back-link" id="backBtn" onclick="handleBack()">
+    <i class="fas fa-arrow-left"></i>
+    <span id="backText">返回</span>
+  </button>
+  <button class="theme-toggle" id="themeToggle" title="切换明暗模式"><i class="fas fa-adjust"></i></button>
+
+  <!-- 开始界面 -->
+   <div class="overlay" id="listOverlay">
+      <div class="overlay-card">
+        <div class="game-title">小游戏<span>合集</span></div>
+        <div class="game-subtitle">选择一个游戏开始体验</div>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px;">
+          <button class="start-btn" onclick="selectGame('typing')" style="font-size:1rem;padding:12px 32px;">
+            文字雨
+          </button>
+          <button class="start-btn" style="font-size:1rem;padding:12px 32px;opacity:0.4;cursor:not-allowed;" disabled>
+            敬请期待
+          </button>
+        </div>
+      </div>
+    </div>
+  <div class="overlay hidden" id="startOverlay">
+    <div class="overlay-card">
+      <div class="game-title">文字<span>雨</span></div>
+      <div class="game-subtitle">
+        文字如雨般落下，敲击键盘将其消灭<br />
+        在它们触地前打出正确的字词！<br />
+        <small style="color:var(--text-dim)">速度会随时间逐渐加快……</small>
+      </div>
+      <div class="difficulty-select" id="diffSelect">
+        <button class="diff-btn" data-diff="easy">轻松</button>
+        <button class="diff-btn active" data-diff="normal">普通</button>
+        <button class="diff-btn" data-diff="hard">困难</button>
+      </div>
+      <div class="diff-desc" id="diffDesc">5 条生命 · Evil钢管</div>
+      <button class="start-btn" id="startBtn">开始游戏</button>
+    </div>
+  </div>
+
+  <!-- 结束界面 -->
+  <div class="overlay hidden" id="endOverlay">
+    <div class="overlay-card">
+      <div class="game-title" id="endTitle">游戏结束</div>
+      <div class="result-stats" id="resultStats"></div>
+      <button class="start-btn" id="restartBtn">再来一局</button>
+    </div>
+  </div>
+
+  <!-- 游戏区 -->
+  <div class="game-wrapper">
+    <div class="game-hud">
+      <div class="hud-item">
+        <i class="fas fa-star"></i>
+        <span class="hud-label">得分</span>
+        <span class="hud-value" id="scoreValue">0</span>
+      </div>
+      <div class="hud-item">
+        <i class="fas fa-fire"></i>
+        <span class="hud-label">连击</span>
+        <span class="hud-value" id="comboValue">0</span>
+      </div>
+      <div class="hud-item">
+        <i class="fas fa-heart"></i>
+        <span class="hud-label">生命</span>
+        <div class="health-bar" id="healthBar"></div>
+      </div>
+      <div class="hud-item">
+        <i class="fas fa-clock"></i>
+        <span class="hud-label">时间</span>
+        <span class="hud-value" id="timeValue">0s</span>
+      </div>
+    </div>
+    <div class="game-canvas" id="gameCanvas">
+      <div class="combo-display" id="comboDisplay"></div>
+      <div class="ground-line"></div>
+      <div class="input-area">
+        <input type="text" id="gameInput" placeholder="在这里打字……" autocomplete="off" inputmode="text" enterkeyhint="done" />
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // ── 暗色模式 ──
+    const themeToggle = document.getElementById('themeToggle');
+    function setTheme(dark) {
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      try { localStorage.setItem('game-theme', dark ? 'dark' : 'light'); } catch(e) {}
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      setTheme(!isDark);
+    });
+    try {
+      if (localStorage.getItem('game-theme') === 'dark') setTheme(true);
+    } catch(e) {}
+
+    // ── 词库 ──
+    const WORD_POOLS = {
+      easy: [
+        '月光','星辰','微风','花瓣','黎明','梦境','回忆','温柔',
+        '故事','旋律','秘密','时光','雨滴','心跳','笑容','天空',
+        '海洋','森林','蝴蝶','烟火','远方','歌声','日落','清晨',
+        '钢管','哲学','牛肉','神经','内存','蜂群','冷鱼','位置',
+        'Neuro','Evil','Vedal','yipee','Camila','Anny','Miniko'
+      ],
+      normal: [
+        '星辰','微风','花瓣','黎明','梦境','回忆','温柔','旋律',
+        '钢管','哲学','牛肉','神经','内存','蜂群','冷鱼','位置',
+        'Neuro','Evil','Vedal','yipee','Camila','Anny','Miniko',
+        'heart','Alex','Ellie','Koko',
+        '轻轻地','看晚霞','一刹那','英格兰','地下室','过滤器','朗姆酒',
+        '真实的','文学社','麦当劳'
+      ],
+      hard: [
+        '钢管','哲学','牛肉','神经','内存','蜂群','冷鱼','位置',
+        '轻轻地','看晚霞','一刹那','英格兰','地下室','过滤器','朗姆酒',
+        '真实的','文学社','麦当劳','过生日','宝可梦','万圣节','吃罐头',
+        'Neuro','Evil','Vedal','yipee','Camila','Anny','Miniko',
+        'heart','Alex','Ellie','Koko','Minawan','NeuroEcho','Minyans',
+        '不紧不慢','不快不慢','恶魔轮盘','可爱动静','存在主义','人工智能'
+      ]
+    };
+
+    // ── 难度配置 ──
+    const DIFFICULTY = {
+      easy: {
+        baseSpeed: 0.35, interval: 2500, maxWords: 4, lives: 7,
+        speedUpEvery: 20, intervalDecrement: 150, minInterval: 1000,
+        speedIncrement: 0.1, maxSpeed: 0.7,
+        desc: '7 条生命 · 醉酒Vedal'
+      },
+      normal: {
+        baseSpeed: 0.5, interval: 2200, maxWords: 6, lives: 5,
+        speedUpEvery: 20, intervalDecrement: 150, minInterval: 900,
+        speedIncrement: 0.1, maxSpeed: 1,
+        desc: '5 条生命 · Evil钢管'
+      },
+      hard: {
+        baseSpeed: 0.7, interval: 1800, maxWords: 8, lives: 3,
+        speedUpEvery: 15, intervalDecrement: 200, minInterval: 700,
+        speedIncrement: 0.15, maxSpeed: 1.5,
+        desc: '3 条生命 · Neuro的哲学课'
+      }
+    };
+
+    // ── 状态 ──
+    let state = {
+      running: false,
+      difficulty: 'normal',
+      score: 0, combo: 0, maxCombo: 0,
+      lives: 5, maxLives: 5,
+      wordsDestroyed: 0, wordsMissed: 0,
+      startTime: 0,
+      currentSpeed: 0.35, currentStage: 1, lastSpeedUpTime: 0,
+      words: [], targetWord: null,
+      spawnTimer: null, animFrame: null, wordIdCounter: 0
+    };
+
+    // ── DOM ──
+    const canvas = document.getElementById('gameCanvas');
+    const input = document.getElementById('gameInput');
+    const scoreEl = document.getElementById('scoreValue');
+    const comboEl = document.getElementById('comboValue');
+    const healthBar = document.getElementById('healthBar');
+    const timeEl = document.getElementById('timeValue');
+    const comboDisplay = document.getElementById('comboDisplay');
+    const startOverlay = document.getElementById('startOverlay');
+    const endOverlay = document.getElementById('endOverlay');
+    const endTitle = document.getElementById('endTitle');
+    const resultStats = document.getElementById('resultStats');
+    const diffDesc = document.getElementById('diffDesc');
+
+    // ── 难度选择 ──
+    document.querySelectorAll('.diff-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.difficulty = btn.dataset.diff;
+        diffDesc.textContent = DIFFICULTY[btn.dataset.diff].desc;
+      });
+    });
+
+    document.getElementById('startBtn').addEventListener('click', startGame);
+    document.getElementById('restartBtn').addEventListener('click', () => {
+      endOverlay.classList.add('hidden');
+      startOverlay.classList.remove('hidden');
+      gamePhase = 'select';
+      updateBackBtn();
+    });
+
+    function startGame() {
+      gamePhase = 'playing';
+      updateBackBtn();
+      const cfg = DIFFICULTY[state.difficulty];
+      Object.assign(state, {
+        running: true, score: 0, combo: 0, maxCombo: 0,
+        lives: cfg.lives, maxLives: cfg.lives,
+        wordsDestroyed: 0, wordsMissed: 0,
+        startTime: Date.now(),
+        currentSpeed: cfg.baseSpeed, currentStage: 1,
+        lastSpeedUpTime: Date.now(),
+        words: [], targetWord: null, wordIdCounter: 0
+      });
+      canvas.querySelectorAll('.falling-word, .score-popup, .speed-up-notice').forEach(el => el.remove());
+      updateHUD();
+      renderHealth();
+      startOverlay.classList.add('hidden');
+      endOverlay.classList.add('hidden');
+      input.value = '';
+      input.focus();
+      // 游戏启动时快照 canvas 高度，避免虚拟键盘弹出后高度变化影响下落速度
+      state.baseCanvasHeight = Math.max(canvas.clientHeight, 400);
+
+      spawnWord();
+      state.spawnTimer = setInterval(spawnWord, cfg.interval);
+      if (state.running) {
+        state.animFrame = requestAnimationFrame(gameLoop);
+      }
+      state.currentInterval = cfg.interval;
+    }
+
+    function spawnWord() {
+      if (!state.running) return;
+      const cfg = DIFFICULTY[state.difficulty];
+      if (state.words.length >= cfg.maxWords) return;
+
+      const pool = WORD_POOLS[state.difficulty];
+      const text = pool[Math.floor(Math.random() * pool.length)];
+
+      const el = document.createElement('div');
+      el.className = 'falling-word';
+      el.textContent = text;
+      el.style.visibility = 'hidden';
+      canvas.appendChild(el);
+      const elWidth = el.offsetWidth;
+      el.style.visibility = '';
+
+      const canvasWidth = canvas.clientWidth;
+      const margin = 16;
+      const maxX = canvasWidth - elWidth - margin;
+      const x = margin + Math.random() * Math.max(maxX, 0);
+
+      el.style.left = x + 'px';
+      el.style.top = '-50px';
+
+      const speedVariance = 0.85 + Math.random() * 0.3;
+      // 使用游戏启动时快照的高度，避免虚拟键盘弹出导致 clientHeight 缩小而减速
+      const heightScale = (state.baseCanvasHeight || Math.max(canvas.clientHeight, 400)) / 600;
+      const word = {
+        id: state.wordIdCounter++, text, x, y: -50,
+        speed: state.currentSpeed * speedVariance * heightScale, el
+      };
+      state.words.push(word);
+    }
+
+    function gameLoop() {
+      if (!state.running) return;
+      const now = Date.now();
+      const elapsed = Math.floor((now - state.startTime) / 1000);
+      const cfg = DIFFICULTY[state.difficulty];
+      const groundY = canvas.clientHeight - 80;
+
+      // 阶段性加速
+      const timeSinceLastSpeedUp = (now - state.lastSpeedUpTime) / 1000;
+      if (timeSinceLastSpeedUp >= cfg.speedUpEvery) {
+        state.lastSpeedUpTime = now;
+        let didChange = false;
+      
+        // 优先缩短生成间隔
+        if (state.currentInterval > cfg.minInterval) {
+          state.currentInterval = Math.max(state.currentInterval - cfg.intervalDecrement, cfg.minInterval);
+          clearInterval(state.spawnTimer);
+          state.spawnTimer = setInterval(spawnWord, state.currentInterval);
+          didChange = true;
+        }
+        // 间隔到下限后，加速移动速度
+        else if (state.currentSpeed < cfg.maxSpeed) {
+          state.currentSpeed = Math.min(state.currentSpeed + cfg.speedIncrement, cfg.maxSpeed);
+          const _hs = (state.baseCanvasHeight || Math.max(canvas.clientHeight, 400)) / 600;
+          state.words.forEach(w => {
+            if (!w.removed) w.speed = state.currentSpeed * (0.85 + Math.random() * 0.3) * _hs;
+          });
+          didChange = true;
+        }
+      
+        if (didChange) {
+          const notice = document.createElement('div');
+          notice.className = 'speed-up-notice';
+          notice.textContent = '⚡ 加速！';
+          canvas.appendChild(notice);
+          setTimeout(() => notice.remove(), 1200);
+        }
+      }
+
+      state.words.forEach(w => {
+        w.y += w.speed;
+        w.el.style.top = w.y + 'px';
+        if (w.y >= groundY) missWord(w);
+      });
+
+      state.words = state.words.filter(w => !w.removed);
+      timeEl.textContent = elapsed + 's';
+      state.animFrame = requestAnimationFrame(gameLoop);
+    }
+
+    function missWord(word) {
+      if (!state.running) return;
+      word.removed = true;
+      word.el.classList.add('failed');
+      setTimeout(() => word.el.remove(), 500);
+      state.wordsMissed++;
+      state.combo = 0;
+      state.lives--;
+      updateHUD();
+      renderHealth();
+      if (state.targetWord && state.targetWord.id === word.id) {
+        state.targetWord = null;
+        input.value = '';
+      }
+      if (state.lives <= 0) endGame();
+    }
+
+    function destroyWord(word) {
+      word.removed = true;
+      word.el.classList.remove('targeted');
+      word.el.classList.add('destroyed');
+      setTimeout(() => word.el.remove(), 400);
+      state.combo++;
+      if (state.combo > state.maxCombo) state.maxCombo = state.combo;
+      const points = word.text.length * 10 + state.combo * 5;
+      state.score += points;
+      state.wordsDestroyed++;
+      showScorePopup(word.el, '+' + points);
+      if (state.combo >= 3) {
+        comboDisplay.textContent = state.combo + ' Combo';
+        comboDisplay.classList.add('show');
+        clearTimeout(comboDisplay._timer);
+        comboDisplay._timer = setTimeout(() => comboDisplay.classList.remove('show'), 1500);
+      }
+      state.targetWord = null;
+      input.value = '';
+      updateHUD();
+    }
+
+    function showScorePopup(refEl, text) {
+      const popup = document.createElement('div');
+      popup.className = 'score-popup';
+      popup.textContent = text;
+      popup.style.left = refEl.style.left;
+      popup.style.top = (parseInt(refEl.style.top) - 10) + 'px';
+      canvas.appendChild(popup);
+      setTimeout(() => popup.remove(), 800);
+    }
+
+    // 跟踪输入法组合状态（中文/日文等输入法在确认前处于 composing 状态）
+    let isComposing = false;
+    input.addEventListener('compositionstart', () => { isComposing = true; });
+    input.addEventListener('compositionend', () => {
+      isComposing = false;
+      // 组合结束后，手动触发一次匹配逻辑
+      input.dispatchEvent(new Event('input'));
+    });
+
+    input.addEventListener('input', () => {
+      if (!state.running) return;
+      // 输入法还在组字过程中，暂不处理
+      if (isComposing) return;
+      const val = input.value;
+      if (!val) {
+        if (state.targetWord) {
+          state.targetWord.el.classList.remove('targeted');
+          state.targetWord.el.textContent = state.targetWord.text;
+          state.targetWord = null;
+        }
+        return;
+      }
+      if (!state.targetWord) {
+        const match = state.words.find(w => !w.removed && w.text.startsWith(val));
+        if (match) {
+          state.targetWord = match;
+          match.el.classList.add('targeted');
+        }
+      }
+      if (state.targetWord) {
+        const w = state.targetWord;
+        if (w.text.startsWith(val)) {
+          w.el.innerHTML =
+            '<span class="matched">' + val + '</span>' +
+            '<span class="unmatched">' + w.text.slice(val.length) + '</span>';
+          if (val === w.text) destroyWord(w);
+        } else {
+          w.el.classList.remove('targeted');
+          w.el.textContent = w.text;
+          state.targetWord = null;
+          input.value = '';
+        }
+      }
+    });
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        if (state.targetWord) {
+          state.targetWord.el.classList.remove('targeted');
+          state.targetWord.el.textContent = state.targetWord.text;
+          state.targetWord = null;
+        }
+        input.value = '';
+      }
+    });
+
+    function updateHUD() {
+      scoreEl.textContent = state.score;
+      comboEl.textContent = state.combo;
+    }
+
+    function renderHealth() {
+      let html = '';
+      for (let i = 0; i < state.maxLives; i++) {
+        html += '<span class="heart ' + (i < state.lives ? '' : 'lost') + '">❤️</span>';
+      }
+      healthBar.innerHTML = html;
+    }
+
+    let gamePhase = 'list'; // 'list' | 'select' | 'playing'
+
+    function handleBack() {
+      if (gamePhase === 'list') {
+        // 在列表页，返回上一页
+        history.back();
+      } else if (gamePhase === 'select') {
+        // 在难度选择页，回到列表
+        startOverlay.classList.add('hidden');
+        document.getElementById('listOverlay').classList.remove('hidden');
+        gamePhase = 'list';
+        updateBackBtn();
+      } else if (gamePhase === 'playing') {
+         state.running = false;
+         clearInterval(state.spawnTimer);
+         cancelAnimationFrame(state.animFrame);
+         state.spawnTimer = null;
+         state.animFrame = null;
+       
+         canvas.querySelectorAll('.falling-word, .score-popup, .speed-up-notice').forEach(el => el.remove());
+         state.words = [];
+         state.targetWord = null;
+         input.value = '';
+       
+         // 隐藏连击和结算面板
+         comboDisplay.classList.remove('show');
+         endOverlay.classList.add('hidden');
+         startOverlay.classList.add('hidden');
+       
+         // 回到列表
+         document.getElementById('listOverlay').classList.remove('hidden');
+         gamePhase = 'list';
+         updateBackBtn();
+      }
+    }
+    
+    function updateBackBtn() {
+      const text = document.getElementById('backText');
+      if (gamePhase === 'playing') {
+        text.textContent = '退出游戏';
+      } else if (gamePhase === 'select') {
+        text.textContent = '返回';
+      } else {
+        text.textContent = '返回';
+      }
+    }
+
+    function selectGame(type) {
+      gamePhase = 'playing';
+      updateBackBtn();
+      if (type === 'typing') {
+        document.getElementById('listOverlay').classList.add('hidden');
+        startOverlay.classList.remove('hidden');
+        gamePhase = 'select';
+        updateBackBtn();
+      }
+    }
+
+    function endGame() {
+      state.running = false;
+      clearInterval(state.spawnTimer);
+      cancelAnimationFrame(state.animFrame);
+      const elapsed = Math.floor((Date.now() - state.startTime) / 1000);
+      const total = state.wordsDestroyed + state.wordsMissed;
+      const accuracy = total > 0 ? Math.round((state.wordsDestroyed / total) * 100) : 0;
+      let grade = '初学者';
+      if (state.score >= 1500) grade = '文豪';
+      else if (state.score >= 1000) grade = '才子';
+      else if (state.score >= 600) grade = '书虫';
+      else if (state.score >= 300) grade = '文学新芽';
+
+      endTitle.innerHTML = '游戏结束';
+      resultStats.innerHTML =
+        '<div class="result-stat"><span class="label">最终得分</span><span class="value highlight">' + state.score + '</span></div>' +
+        '<div class="result-stat"><span class="label">评级</span><span class="value highlight">' + grade + '</span></div>' +
+        '<div class="result-stat"><span class="label">消灭文字</span><span class="value">' + state.wordsDestroyed + '</span></div>' +
+        '<div class="result-stat"><span class="label">最高连击</span><span class="value">' + state.maxCombo + '</span></div>' +
+        '<div class="result-stat"><span class="label">命中率</span><span class="value">' + accuracy + '%</span></div>' +
+        '<div class="result-stat"><span class="label">存活时间</span><span class="value">' + elapsed + 's</span></div>' +
+        '<div class="result-stat"><span class="label">最终阶段</span><span class="value">' + state.currentStage + '</span></div>';
+      endOverlay.classList.remove('hidden');
+      gamePhase = 'select';
+      updateBackBtn();
+    }
+
+    canvas.addEventListener('click', () => input.focus());
+
+    // 移动端：键盘弹起后将输入框滚入视野
+    input.addEventListener('focus', () => {
+      if (window.innerWidth <= 640) {
+        setTimeout(() => {
+          input.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 300);
+      }
+    });
+    renderHealth();
+  </script>
+  <img class="cursor-follower" id="cursorFollower" src="/image/neuro_stand.png" alt="" />
+
+  <script>
+  const follower = document.getElementById('cursorFollower');
+  document.addEventListener('mousemove', e => {
+    follower.style.left = e.clientX + 'px';
+    follower.style.top = e.clientY + 'px';
+  });
+  </script>
+</body>
+</html>

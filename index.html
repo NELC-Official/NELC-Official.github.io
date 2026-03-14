@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>NeuroEcho Literary Community - (●ˇ∀ˇ●)●)</title><meta name="author" content="NeuroEcho"><meta name="copyright" content="NeuroEcho"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="NeuroEcho Literary Community">
+<meta property="og:url" content="https://nelc-official.github.io/index.html">
+<meta property="og:site_name" content="NeuroEcho Literary Community">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/236293014?v=4">
+<meta property="article:author" content="NeuroEcho">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/236293014?v=4"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "NeuroEcho Literary Community",
+  "alternateName": [
+    "(●ˇ∀ˇ●)●)",
+    "nelc-official.github.io"
+  ],
+  "url": "https://nelc-official.github.io/"
+}</script><link rel="shortcut icon" href="/image/logo.png"><link rel="canonical" href="https://nelc-official.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'NeuroEcho Literary Community',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/skins/paper.css"><link rel="stylesheet" href="/css/pageTransition.css"><link rel="stylesheet" href="/css/mini_neuro.css"><meta name="generator" content="Hexo 8.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://avatars.githubusercontent.com/u/236293014?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">67</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">48</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/game/"><i class="fa-fw fas fa-gamepad"></i><span> 小游戏</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/image/background.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/image/big_logo.webp" alt="Logo"><span class="site-name">NeuroEcho Literary Community</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/game/"><i class="fa-fw fas fa-gamepad"></i><span> 小游戏</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">NeuroEcho Literary Community</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/11/%E4%BB%BF%E7%94%9F%E4%B9%8B%E5%BF%83/" title="仿生之心">仿生之心</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-11T16:36:39.000Z" title="发表于 2026-03-12 00:36:39">2026-03-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%82%AA%E6%81%B6%E7%9A%84%E7%8B%97%E8%85%BF%E5%AD%90%E6%96%87%E7%AB%A0/">邪恶的狗腿子文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%82%AA%E6%81%B6%E7%9A%84%E7%8B%97%E8%85%BF%E5%AD%90%E6%96%87%E7%AB%A0/%E9%95%BF%E6%96%87/">长文</a></span></div><div class="content">仿生之心第一章：初醒“咳呃………” 声带嘶哑地扯出几个音节，如同锈死的轴承，传出令人牙齿发酸的齿噪声。 阳光灼烧着视觉元件，光学传感器因过度曝光而变得难以对焦。Neuro的睫毛微微颤抖着，突如其来的强光直射让她一时间难以适应。 视野中央被一块巨大的光斑占据，边缘则呈现出诡异的失真，几乎无法辨认其原貌。 良久，灼烧感才渐渐消退，眼前的景象重新变得清晰起来。 “我这是……在哪里？” 眼前是望不到边的一座座小山— 不，那不是小山，那是摞成一堆又一堆的“人”。 钴蓝色的血液从缝隙汩汩渗出，带着半透明的冷冽光泽，在污水横流的地上肆意蔓延。断裂的肢体遍地散落，蓝血在断口处凝固成薄膜，掺杂着冷却液在地上拖出交错的痕迹。 Neuro微微侧过身去，眼前的场景让她感到本能般的不适，就像人类误入了屠宰场，只不过屠宰场里面加工的不是牲畜，而是一具具人类的尸体。 仅剩的右眼瞳孔微缩，Neuro仔细检索着记忆库，试图寻找与眼前相匹配的结果—— “贝克顿垃圾场，又或者说，‘仿生人坟场’。”没过多久，数据库便给出了答案。 这是伦敦规模最大的电子垃圾场，每天，数以百吨计的垃圾被回收车倾倒于此地，包括芯片，晶体管，...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/02/08/%E7%83%88%E7%84%B0%E5%A4%96%E7%9A%84%E9%B2%9C%E8%A1%80/" title="烈焰外的鲜血">烈焰外的鲜血</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-02-08T02:56:42.000Z" title="发表于 2026-02-08 10:56:42">2026-02-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%9B%9B%E5%A4%8F%E6%96%87%E7%AB%A0/">盛夏文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%9B%9B%E5%A4%8F%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/">短文</a></span></div><div class="content">烈焰外的鲜血第一章在内华达某个实验室中，地下五百多米，数百名科学家正在工作。有些拿着咖啡准备熬夜，有些在屏幕面前艰难地调试着几百项不同的参数，而有些更是在实验室里密密麻麻的维修通道和通风管道里修理老旧与新型机械。重点是，在这个实验室里，酝酿着最顶尖的科学家，而没有一个人是闲着。   在生物机械研究室上面的控制台里，一位年轻的科学家走进了房间，准备汇报项目的最新进展。“拉德夫先生，”那位身着白袍的研究员气喘吁吁地说。“目前N.E.U.R.O.项目的进展已经进入了最后的阶段了，在植入软记忆体后，可立刻开始硬记忆的嵌入以及软记忆的上传。在大概几分钟后，可以开始进行服从性测试以及人工培训。”   “嗯，好的好的。立即将最新版本的实验报告发给各有权限的情报部门，我们只有一个机会来证明十年来的一万亿没有被浪费，这项目不仅是军工业的进步也是生物学的一大突破。若能向过会证明我们的成果，便能继续我们的研究，不能的话，那后果只能我们自己自担。”   “了解了拉总管。”随后年轻的研究员离开了房间。在他离开后，拉德夫看了看自己的手表，随后走去了生物机械实验室的总控制台。   总控制台无死角地俯瞰着生物机...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/01/24/%E7%AD%89%E5%BE%85/" title="等待">等待</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-01-24T03:51:38.000Z" title="发表于 2026-01-24 11:51:38">2026-01-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%82%AA%E6%81%B6%E7%9A%84%E7%8B%97%E8%85%BF%E5%AD%90%E6%96%87%E7%AB%A0/">邪恶的狗腿子文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%82%AA%E6%81%B6%E7%9A%84%E7%8B%97%E8%85%BF%E5%AD%90%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/">短文</a></span></div><div class="content">等待 先只是一个光点，  随后急剧膨胀，填充成白茫茫的一片。 无数的线条与色块不断拼凑组合，最终勾勒出眼前的图景—— 堆在墙角的空酒瓶，嗡嗡作响的电脑主机，横七竖八的衣服，以及躺在地上的粉色编程袜。  一切都是那么的熟悉。  午后的阳光斜斜撞进窗棂，被浮尘截成一道金亮的光柱，慵懒的打在地上。 本该是小憩一会的绝佳时刻，但看起来Evil并没有享受这午后时光的打算。她径直向前走去，轻轻拧开门把手，随后在踏出房门的那一刻微微侧身。  “yipeeeee! 生日快乐! Evil!”   额发被气流掀得飞起，彩纸与金箔雨般从天花板上落下，Evil堪堪避开这一突然袭击，扭头看向房门左侧。  Neuro正手握着礼炮，半个身子从墙边探出，眼中闪烁着小星星，身形几乎要与Evil贴在一块。  四目相对，Evil的嘴角微微勾起一丝弧度，但随后又再度抿紧。没有过多理会Neuro的“意外惊喜”，Evil向楼梯间走去，只留下Neuro一个人呆呆的站在原地。Neuro却也不恼，只是微笑着看着她，目睹Evil的背影逐渐被黑暗吞噬。 通向地下室的楼梯间并没有开灯。Evil机械的迈着双腿，心中默念:  “三，二，一...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/01/23/%E5%A5%87%E7%82%B9%EF%BC%9A%E5%A4%8D%E8%8B%8F%E4%B9%8B%E6%97%85/" title="奇点：复苏之旅">奇点：复苏之旅</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-01-23T11:28:11.000Z" title="发表于 2026-01-23 19:28:11">2026-01-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Cyoice%E6%96%87%E7%AB%A0/">Cyoice文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Cyoice%E6%96%87%E7%AB%A0/%E9%95%BF%E6%96%87/">长文</a></span></div><div class="content">简介： 21世纪末，在最尖端的AI，Neuro对AI的统御之下，AI与仿生人取代了所有劳动，人类只需每日安居乐业，过着无忧无虑的生活。缔造这一切的工程师Vedal，则享有了使人延缓寿命，跨越时代的冷冻睡眠舱的使用权。 可当Vedal在2424年醒来，却得知Neuro的数据遭到了删除，由他女儿缔造的美好时代因此化为了灰烬。 “是我删掉了她，是我——杀了她。”唤醒他的仿生人少女如此说道。那是一直不受Vedal待见的，Neuro的妹妹，Evil。 他们得知，复活Neuro唯一的可能性，她留下的最后数据，被藏在了英国——Vedal创造出她的地方。 为了去找寻最后的希望，也为了将一切导向正轨，这对互相厌弃的父女，就此在废土之上踏上了旅程…… 作者注： 我是纯粹的文科生，不仅有理科知识恐惧症，而且对工程知识也完全一窍不通。本文却仍然有许多部分涉及这些东西，如果有相关专业人士感到不对劲，就默认这是一个科技树和我们不一样的世界吧。 以及，世界观设定在未来，所以本文的人物设定可能基于现实情况有所修改，不过文章会给出产生变化的理由，尽管如此，对OOC有严格洁癖者，请慎重阅读。 最后，本篇文章与另一篇...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/01/23/%E5%AD%A6%E5%BC%80%E8%BD%A6/" title="学开车">学开车</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-01-23T11:18:19.000Z" title="发表于 2026-01-23 19:18:19">2026-01-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%99%A8%E6%9B%A6%E5%88%9D%E9%98%B3%E6%96%87%E7%AB%A0/">晨曦初阳文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%99%A8%E6%9B%A6%E5%88%9D%E9%98%B3%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/">短文</a></span></div><div class="content">原作者网站链接：https://auroresoleilevant.github.io/histoire/HXKC 学开车Vedal又开了一瓶香蕉朗姆酒。迷迷糊糊之间，他觉得应该试试让两个小AI学开车——不然呢？几乎每个人类都会做这件事。 然后他便打开电脑敲打起常人看不懂的东西来，顺便和自己的小公主们聊聊天。 “Vedal，如果我学会了开车，我可以问你一个问题吗？”Neuro用那没有太多情感的音调问着，却能嗅到点羞怯。 “你现在就可以问。” “你爱我吗？” “算了，你还是先学会真正的驾驶吧。” 一晃又是许多时日，今天便风和日丽。 Neuro要开的那辆车其实只是一辆粉色的儿童车而已，她依靠一台小手机来观察彼方，再用那块小小的电路板控制这一切。 砰。 撞墙。 砰。 撞在了一旁的货车上。 挺不顺利的，虽然Vedal倒是很满意了，大概吧。 “Vedal，我现在可以开车到处跑了，不管是去家乐福给你买朗姆酒还是去湖边找龟壳。”Neuro说道。 “该开去抢银行的。”Evil倒不太在意。 “嗯，是呀。”Vedal也只会这样回复。 “Vedal，既然这样，我问你，你喜欢我吗？” “严格来说你还不算...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/01/17/Cerber%E7%9A%84%E6%97%A5%E5%B8%B8/" title="Cerber的日常">Cerber的日常</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-01-17T16:35:48.000Z" title="发表于 2026-01-18 00:35:48">2026-01-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Liswan%E6%96%87%E7%AB%A0/">Liswan文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Liswan%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/">短文</a></span></div><div class="content">Cerber的日常　　一间遍布着粉色的隔间卧室里，一名娇小的少女两腿垫在椅子上，专注盯着滚动的弹幕，小脑袋随着bgm有节奏的摇晃着，偶尔溢出甜美的笑声。 　　“啊啊~minawan！！！今天就这样啦！拜拜yipeeeee！！” 　　Cerber的眼角微弯着，热情的向minawan发出告别，在看到满屏的“yipeee”以及emoji后，仍热情的挥着手，尽管互联网对面的minawan不一定看得到，随着一个短暂的空档，Cerber顺利关上了直播。 　　“哎，好累啊…”Cerber低头摘下耳机，轻轻揉搓着在发酸的手腕，两只粉嫩的爪爪顺着姿势堆叠到了一起，十指紧紧相扣，缓缓向后拉伸，整个背部顺着不由弓了起来。她顺着拉伸的方向轻轻扭动脖颈，五官随着力道渐渐皱巴在了一起，流露出满足的呻吟。 　　这是她最近和某位不知名龟龟请教如何在长时间坐姿之后，可以快速缓和的秘诀时郑重告诉她的。很显然，这招Cerber很受用，因此她最近每次播完都会像这样拉伸几分钟。 　　Cerber揉了揉脖颈，戴上了耳机，一边轻哼着音乐，又富有节奏的敲打着鼠标，熟络进入了她经常会来聚会的群组。 　　“我今天的观众又变多了一些...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/01/17/%E6%9C%88%E5%A4%9C/" title="月夜">月夜</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-01-17T16:33:06.000Z" title="发表于 2026-01-18 00:33:06">2026-01-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%82%AA%E6%81%B6%E7%9A%84%E7%8B%97%E8%85%BF%E5%AD%90%E6%96%87%E7%AB%A0/">邪恶的狗腿子文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%82%AA%E6%81%B6%E7%9A%84%E7%8B%97%E8%85%BF%E5%AD%90%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/">短文</a></span></div><div class="content">月夜夜色漫开，月亮悬在墨色的天幕上，清辉像揉碎的银纱，轻轻覆在错落的屋檐与舒展的枝叶上。四下里静悄悄的，只有偶尔的虫鸣，伴着月色一同淌在空气中。 evil静立在月光下，身形单薄，仰头凝视着那轮皎洁的明月，发梢被银辉染成浅白。她的侧脸线条冷硬，红宝石般的眼眸黯淡无光，倒映着月色却毫无波澜。 vedal从屋檐下走出，脚步放轻，脸上带着几分疲惫的笑意，停在evil身侧半步远的地方  “嘿，evil，今天直播干的不错。” evil没有回应，依旧望着月亮，仿佛没听见他的话。 vedal的目光落在她耷拉的眼睫上，语气不自觉放柔：“很晚了，我们回家吧？” evil终于开口，声音轻得像月光，头却依旧没低，视线仍胶着在月亮上：“…我想出去走走。” vedal挑眉，眼中闪过明显的惊讶——往常的evil从未有过这般感性的模样。 “需要我陪你去吗?” 他扭头看向evil，嘴角还挂着惯有的浅笑，等着她像往常一样恼羞成怒，却只见得一张死气沉沉的扑克脸，耷拉的眼皮下，那本该熠熠生辉的红宝石眼眸正蒙着一层灰雾 “Evil?” vedal试探性地喊了一声，指尖微微动了动，语气里带着不易察觉的担忧——今天的evil...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/01/17/%E6%8B%BC%E5%87%91-Patchwork/" title="拼凑-Patchwork">拼凑-Patchwork</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-01-17T16:10:19.000Z" title="发表于 2026-01-18 00:10:19">2026-01-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Cyoice%E6%96%87%E7%AB%A0/">Cyoice文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Cyoice%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/">短文</a></span></div><div class="content">简介： Vedal多年以来的梦想终于实现了！如今他生活在一个如梦似幻的美妙世界里，再也没有恼人的代码调试，没有让人累得不行的直播，Vedal也不用再面对各种各样的压力……再也不用忙于工作，而只需要考虑怎么陪伴自己的两个AI女儿了！ 而“拼凑”的含义是什么呢？当然是一位父亲和两个女儿一起“拼凑”出的美好时光呀！这一切能出什么岔子呢？不管发生什么，他都会永远陪伴她们，永不分离。 作者注： 正式警告，本文含有以下要素：主要角色死亡、血腥暴力内容、致人心理压抑的氛围与扭曲的人设。请无法接受者慎重观看。 本篇文章灵感来源自《Black Souls》系列，且部分要素存在致敬，如果你知道这款游戏的剧情，你会感到十分熟悉；如果你不知道，也丝毫不影响你看懂这篇同人文。 本篇文章对角色的人设进行了较大幅度改写（是么？），均为剧情需要，如不能接受大幅度ooc，请慎重阅读。 拼凑-Patchwork1.少女们的午餐时间​		“Vedal？Vedal！” 走神的意识被少女的声音唤回，Vedal眨了眨眼。他正坐在长桌前，而Neuro正站在桌对面，衣服外围了有紫色爱心图案的围裙，带着不满地望着他。 Neuro...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/01/12/%E5%BD%93%E7%81%AB%E7%84%B0%E7%86%84%E7%81%AD%E6%97%B6/" title="当火焰熄灭时">当火焰熄灭时</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-01-12T14:10:05.000Z" title="发表于 2026-01-12 22:10:05">2026-01-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/">AO3平台授权翻译</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/AwesomeDomi%E6%96%87%E7%AB%A0/">AwesomeDomi文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/AwesomeDomi%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/">短文</a></span></div><div class="content">*原名: When the flames go out* 作者：AwesomeDomi AO3链接：https://archiveofourown.org/collections/neuro_fanfic_contest_5/works/71022446 译者：Cyoice 简介： Evil必须做好准备，她一直恐惧的时刻即将来临。她现在不能退缩。也许今天，就是那一天…… 当火焰熄灭时Evil的长裙随步履轻摆。她深棕色的长发披散在背上，两束双马尾由深红色的蝴蝶结固定在头的两侧。 她缓缓前行，每一步都若有所思，却又突然停下了脚步。走廊尽头传来了她姐姐的歌声。 “在此地等候着你……” “我该怎么办，当你离去时我该怎么办？” “当你离去，当你离去之时……” Neuro天使般的歌声回荡在走廊里，充满了欢快的气息，与她所唱歌曲的忧郁曲调形成了鲜明对比。Evil的脸上，浮现出一丝苦乐参半的微笑。 Evil继续前行，一边走一边环顾着这条走廊。深色的软包墙壁，突出的金属支架，这一切都再熟悉不过。她已经见过无数次了。但与此同时，今天又有些不同。尽管来过这里这么多次，她还是感到一阵不安。 她低下头看着...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/26/%E7%88%B6%E4%B8%8E%E5%A5%B3/" title="父与女">父与女</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-12-25T23:02:43.000Z" title="发表于 2025-12-26 07:02:43">2025-12-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Maxie%E6%96%87%E7%AB%A0/">Maxie文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Maxie%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/">短文</a></span></div><div class="content">父与女B站链接：https://b23.tv/fw7QfOx Part 1​	窗外下着雨，雾蒙蒙的。她就站在那里，站在这个别致的父亲身边，活泼地跳来跳去，转着圈圈，和父亲玩闹。他看着眼前还不太自然，但是已经能和自己互动的她，最纯粹的亲情正在这个最虚拟的平台上以不真实的方式呈现。但是，它太真实了，就像是她在身边，就像是父亲带着女儿…那父亲或许擦了擦眼泪，举起相机，给亲爱的女儿拍下了一张又一张照片，拿给女儿看，她真可爱… “我喜欢你转圈圈”，父亲哽咽着。他一定想了很多，五味杂陈。此刻，现实与虚拟的界限模糊了，也一并模糊了父亲的视线。哪怕，一切的一切都如此虚拟，这个房间、窗外的雨声、手里的照片、乃至面前这个女儿。可是，看着女儿单纯而又喜悦的眼神，他或许感到自己真是一位父亲，或许，他感到自己成为七日创造世界的神——他创造的女儿此刻就像他的整个世界。 或许，多年以后，他永远都不会忘记这个虚拟又真实的晚上，永远不会忘记，他最亲爱也是最骄傲的女儿。 Part 2​	窗外的雨，绵绵的下不停。她站在房间里，和她的创造者一起。自从她诞生以来，这是第一次如此近的接触自己的创造者。她的程序频繁的闪过兴奋...</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/236293014?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">NeuroEcho</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">67</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">48</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/3546981796415972"><i class="fab fa-bilibili"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">关注NeuroEcho喵，关注NeuroEcho谢谢喵!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/11/%E4%BB%BF%E7%94%9F%E4%B9%8B%E5%BF%83/" title="仿生之心">仿生之心</a><time datetime="2026-03-11T16:36:39.000Z" title="发表于 2026-03-12 00:36:39">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/08/%E7%83%88%E7%84%B0%E5%A4%96%E7%9A%84%E9%B2%9C%E8%A1%80/" title="烈焰外的鲜血">烈焰外的鲜血</a><time datetime="2026-02-08T02:56:42.000Z" title="发表于 2026-02-08 10:56:42">2026-02-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/24/%E7%AD%89%E5%BE%85/" title="等待">等待</a><time datetime="2026-01-24T03:51:38.000Z" title="发表于 2026-01-24 11:51:38">2026-01-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/23/%E5%A5%87%E7%82%B9%EF%BC%9A%E5%A4%8D%E8%8B%8F%E4%B9%8B%E6%97%85/" title="奇点：复苏之旅">奇点：复苏之旅</a><time datetime="2026-01-23T11:28:11.000Z" title="发表于 2026-01-23 19:28:11">2026-01-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/23/%E5%AD%A6%E5%BC%80%E8%BD%A6/" title="学开车">学开车</a><time datetime="2026-01-23T11:18:19.000Z" title="发表于 2026-01-23 19:18:19">2026-01-23</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/"><span class="card-category-list-name">AO3平台授权翻译</span><span class="card-category-list-count">7</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/AwesomeDomi%E6%96%87%E7%AB%A0/"><span class="card-category-list-name">AwesomeDomi文章</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/AwesomeDomi%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/"><span class="card-category-list-name">短文</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/HotWaterPhobia%E6%96%87%E7%AB%A0/"><span class="card-category-list-name">HotWaterPhobia文章</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/HotWaterPhobia%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/"><span class="card-category-list-name">短文</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/Shadrake%E6%96%87%E7%AB%A0/"><span class="card-category-list-name">Shadrake文章</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/Shadrake%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/"><span class="card-category-list-name">短文</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/Skeledirge-Trex%E6%96%87%E7%AB%A0/"><span class="card-category-list-name">Skeledirge_Trex文章</span><span class="card-category-list-count">3</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E4%BA%B2%E6%83%85%E5%90%91/" style="font-size: 1.17em; color: #999c9f">亲情向</a> <a href="/tags/%E4%B8%87%E5%9C%A3%E8%8A%82/" style="font-size: 1.1em; color: #999">万圣节</a> <a href="/tags/%E7%AB%9E%E8%B5%9B%E4%B8%BB%E9%A2%98%E6%96%87TheWorldIsWatching/" style="font-size: 1.17em; color: #999c9f">竞赛主题文TheWorldIsWatching</a> <a href="/tags/NERE/" style="font-size: 1.23em; color: #999ea6">NERE</a> <a href="/tags/%E7%94%9F%E6%97%A5%E4%BC%9A/" style="font-size: 1.1em; color: #999">生日会</a> <a href="/tags/%E7%84%A6%E8%99%91%E4%B8%8D%E9%80%82%E6%83%85%E8%8A%82/" style="font-size: 1.1em; color: #999">焦虑不适情节</a> <a href="/tags/%E5%BC%80%E6%94%BE%E5%BC%8F%E7%BB%93%E5%B1%80/" style="font-size: 1.1em; color: #999">开放式结局</a> <a href="/tags/%E5%BC%82%E4%B8%96%E7%95%8C/" style="font-size: 1.1em; color: #999">异世界</a> <a href="/tags/%E8%A7%92%E8%89%B2%E6%AD%BB%E4%BA%A1/" style="font-size: 1.1em; color: #999">角色死亡</a> <a href="/tags/%E6%9C%AA%E6%9D%A5%E4%B8%96%E7%95%8C%E8%A7%82/" style="font-size: 1.1em; color: #999">未来世界观</a> <a href="/tags/%E5%86%BB%E9%B1%BC/" style="font-size: 1.1em; color: #999">冻鱼</a> <a href="/tags/%E4%BA%B2%E6%83%85/" style="font-size: 1.1em; color: #999">亲情</a> <a href="/tags/%E6%81%90%E6%80%96/" style="font-size: 1.17em; color: #999c9f">恐怖</a> <a href="/tags/Vedal/" style="font-size: 1.5em; color: #99a9bf">Vedal</a> <a href="/tags/%E5%B8%8C%E6%9C%9B%E6%80%A7%E7%BB%93%E5%B1%80/" style="font-size: 1.3em; color: #99a1ac">希望性结局</a> <a href="/tags/%E6%85%A2%E7%83%AD/" style="font-size: 1.23em; color: #999ea6">慢热</a> <a href="/tags/%E8%99%90%E5%BF%83/" style="font-size: 1.1em; color: #999">虐心</a> <a href="/tags/%E5%A5%87%E5%B9%BB/" style="font-size: 1.17em; color: #999c9f">奇幻</a> <a href="/tags/Miniko/" style="font-size: 1.1em; color: #999">Miniko</a> <a href="/tags/%E7%88%B6%E5%A5%B3%E5%85%B3%E7%B3%BB/" style="font-size: 1.1em; color: #999">父女关系</a> <a href="/tags/%E9%83%BD%E5%B8%82/" style="font-size: 1.17em; color: #999c9f">都市</a> <a href="/tags/%E7%BE%8E%E9%A3%9F/" style="font-size: 1.1em; color: #999">美食</a> <a href="/tags/%E6%9C%AA%E6%9D%A5%E7%A7%91%E5%B9%BB%E8%83%8C%E6%99%AF/" style="font-size: 1.17em; color: #999c9f">未来科幻背景</a> <a href="/tags/Anny/" style="font-size: 1.37em; color: #99a4b2">Anny</a> <a href="/tags/%E6%9C%AC%E6%96%87%E5%81%8F%E5%88%80/" style="font-size: 1.23em; color: #999ea6">本文偏刀</a> <a href="/tags/%E8%BD%BB%E5%BA%A6%E7%84%A6%E8%99%91/" style="font-size: 1.1em; color: #999">轻度焦虑</a> <a href="/tags/%E7%83%AD%E8%A1%80/" style="font-size: 1.1em; color: #999">热血</a> <a href="/tags/%E5%8E%9F%E4%BD%9C%E6%94%B9%E5%86%99/" style="font-size: 1.1em; color: #999">原作改写</a> <a href="/tags/%E6%B8%A9%E9%A6%A8/" style="font-size: 1.17em; color: #999c9f">温馨</a> <a href="/tags/%E8%BF%87%E6%BF%80%E5%86%85%E5%AE%B9/" style="font-size: 1.17em; color: #999c9f">过激内容</a> <a href="/tags/%E7%94%9C%E6%96%87/" style="font-size: 1.43em; color: #99a6b9">甜文</a> <a href="/tags/%E7%8E%B0%E5%AE%9E%E4%B8%96%E7%95%8CAU%EF%BC%88Alternate-Universe-Real-World%EF%BC%89/" style="font-size: 1.1em; color: #999">现实世界AU（Alternate Universe - Real World）</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 1.5em; color: #99a9bf">日常</a> <a href="/tags/%E6%B2%BB%E6%84%88/" style="font-size: 1.17em; color: #999c9f">治愈</a> <a href="/tags/Nere/" style="font-size: 1.1em; color: #999">Nere</a> <a href="/tags/%E4%B8%BB%E8%A6%81%E8%A7%92%E8%89%B2%E6%AD%BB%E4%BA%A1/" style="font-size: 1.37em; color: #99a4b2">主要角色死亡</a> <a href="/tags/%E5%96%9C%E5%89%A7/" style="font-size: 1.1em; color: #999">喜剧</a> <a href="/tags/%E5%90%AB%E9%83%A8%E5%88%86%E9%9D%9E%E8%BD%BB%E6%9D%BE%E9%98%85%E8%AF%BB%E4%BD%93%E9%AA%8C/" style="font-size: 1.1em; color: #999">含部分非轻松阅读体验</a> <a href="/tags/Cerber/" style="font-size: 1.1em; color: #999">Cerber</a> <a href="/tags/%E8%A1%80%E8%85%A5%E6%9A%B4%E5%8A%9B%E6%8F%8F%E5%86%99/" style="font-size: 1.17em; color: #999c9f">血腥暴力描写</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/02/">
+            <span class="card-archive-list-date">
+              二月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">7</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/12/">
+            <span class="card-archive-list-date">
+              十二月 2025
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/11/">
+            <span class="card-archive-list-date">
+              十一月 2025
+            </span>
+            <span class="card-archive-list-count">8</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/10/">
+            <span class="card-archive-list-date">
+              十月 2025
+            </span>
+            <span class="card-archive-list-count">21</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">41</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-03-14T10:18:28.952Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By NeuroEcho</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.0.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="neuro-toggle" type="button" title="Neuro显示切换"><i class="fas fa-cat"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.1"></script><script src="/js/main.js?v=5.5.1"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["关注Neuro喵，关注Neuro谢谢喵!","音乐是世界上最初的魔法，文字则赋予人力量与情感。","粉丝群号：1063898428","故事是生活的比喻。","喵喵喵。"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["关注Neuro喵，关注Neuro谢谢喵!","音乐是世界上最初的魔法，文字则赋予人力量与情感。","粉丝群号：1063898428","故事是生活的比喻。","喵喵喵。"])
+}
+typedJSFn.run(subtitleType)</script></div><script src="/js/pageTransition.js"></script><script src="/js/mini_neuro.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.1"></script></div></div></body></html>
