@@ -1,0 +1,196 @@
+:root:not([data-theme="dark"]) {
+  /* 全局页面背景底色 */
+  --heo-background: #6378d7; /* 该颜色在此主题中不定义背景色，保留是为了一些引用这个色的内容 */
+
+  /* 卡片 */
+  --card-bg: rgba(230, 242, 255, 0.96); /* 背景色 */
+
+  /* 全局文本 */
+  --heo-font-color: #1f2a33; /* 普通文本 */
+  --heo-link-hover-color: #4caf32; /* 链接悬停文本 */
+  --heo-post-info-color: #5f6f7c; /* 文章信息抬头文本颜色 */
+  --heo-selection-color: #4a8f2a; /* 选定文本背景颜色 */
+  --heo-selection-font-color: #ffffff; /* 选定文本颜色 */
+  --heo-title-color: #1f4fa3; /* 文章大标题颜色，以及一些其他类似文本 */
+  --heo-sous-title-color: #5ea33a; /* 边栏次标题颜色 */
+  --heo-strong-color: #3f8f2d; /* 加粗链接颜色 */
+
+  /* 顶栏 */
+  --heo-header-color: #2f63d6; /* 背景色 */
+  --heo-header-font-color: #ffffff; /* 文本颜色 */
+  --heo-header-link-menu-hover-color: #6bbf3a; /* 菜单悬停条颜色 */
+
+  /* 底栏 */
+  --heo-footer-color: #2f63d6; /* 背景色 */
+  --heo-footer-font-color: #ffffff; /* 文本颜色 */
+
+  /* 侧栏 */
+  --heo-card-archive-bg: #e2f3d8; /* 背景色 */
+  --heo-chapter-color: #6bbf3a; /* 目录当前章节颜色块 */
+
+  /* 滚动条 */
+  --scrollbar-thumb-bg: #6bbf3a; /* 滚动条滑块颜色 */
+  --scrollbar-frame: #9ad46a; /* 滚动条滑块边框颜色 */
+
+  /* 分割线 */
+  --heo--hr-color: #b9d8a6; /* 分割线颜色 */
+  --heo-he--before-color: #3f8f2d; /* 分割线前的文本颜色 */
+
+  /* 推荐框 */
+  --heo-pagination-related-bg: #9eca82; /* 推荐框背景色 */
+}
+
+/* 顶栏背景色 */
+:root:not([data-theme="dark"]) header.nav-fixed #nav {
+  background-color: var(--heo-header-color) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+}
+/* 我还是不太建议删掉这些important */
+
+/* 应用顶栏文本颜色 */
+:root:not([data-theme="dark"]) header.nav-fixed #nav a,
+:root:not([data-theme="dark"]) header.nav-fixed #nav span,
+:root:not([data-theme="dark"]) header.nav-fixed #nav i {
+  color: var(--heo-header-font-color) !important;
+}
+
+/* 应用全局底色 */
+:root:not([data-theme="dark"]) body {
+  /*background: var(--heo-background);*/
+  color: var(--heo-font-color);
+  background: linear-gradient(#7aa7ff, #6378d7) !important;
+}
+
+/* 底栏颜色 */
+#footer {
+  background-color: var(--heo-footer-color);
+  color: var(--heo-footer-font-color);
+}
+
+/* 滚动条颜色 */
+:root:not([data-theme="dark"]) ::-webkit-scrollbar {
+  width: 8px;
+}
+:root:not([data-theme="dark"]) ::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  border: 2px solid var(--scrollbar-frame);
+}
+
+/* 默认链接悬停色 */
+:root:not([data-theme="dark"])
+  a:hover:not(#nav a):not(#card-info-btn):not(.card-archive-list-link):not(
+    .page-number
+  ):not(.toc-link):not(.card-category-list-link):not(.extend.next) {
+  color: var(--heo-link-hover-color) !important;
+}
+
+/* 侧边按钮式菜单悬停色 */
+:root:not([data-theme="dark"]) .card-archive-list-link:hover,
+:root:not([data-theme="dark"]) .card-category-list-link:hover {
+  background-color: var(--heo-card-archive-bg) !important;
+}
+
+/* 菜单底条固定棕色 */
+:root:not([data-theme="dark"]) .menus_item a::after,
+:root:not([data-theme="dark"]) #menus .site-page::after {
+  background-color: var(--heo-header-link-menu-hover-color);
+}
+
+/* 文章信息栏 */
+:root:not([data-theme="dark"]) .post-copyright-meta,
+:root:not([data-theme="dark"]) .post-copyright-meta i {
+  color: var(--heo-post-info-color) !important;
+}
+
+/* 分割线颜色 */
+:root:not([data-theme="dark"]) .custom-hr {
+  border-color: var(--heo--hr-color);
+}
+:root:not([data-theme="dark"]) .custom-hr::before {
+  color: var(--heo-he--before-color);
+}
+
+/* 推荐框 */
+:root:not([data-theme="dark"]) .pagination-related {
+  background-color: var(--heo-pagination-related-bg);
+}
+
+/* 选定 */
+:root:not([data-theme="dark"]) ::selection {
+  background: var(--heo-selection-color);
+  color: var(--heo-selection-font-color);
+}
+
+/* 文章大标题色 */
+:root:not([data-theme="dark"]) .article-title,
+:root:not([data-theme="dark"]) .length-num,
+:root:not([data-theme="dark"]) h1:has(.headerlink),
+:root:not([data-theme="dark"]) h2:has(.headerlink) {
+  color: var(--heo-title-color) !important;
+}
+
+/* 加粗链接 */
+:root:not([data-theme="dark"]) strong a {
+  color: var(--heo-strong-color);
+}
+
+/* 边栏次标题 */
+:root:not([data-theme="dark"]) .headline,
+:root:not([data-theme="dark"]) .title,
+:root:not([data-theme="dark"]) .card-archive-list-date,
+:root:not([data-theme="dark"]) .card-archive-list-count {
+  color: var(--heo-sous-title-color) !important;
+}
+
+/* 边栏目录文本 */
+:root:not([data-theme="dark"]) .toc-link:not(.active) .toc-number,
+:root:not([data-theme="dark"]) .toc-link:not(.active) .toc-text {
+  color: var(--heo-sous-title-color);
+}
+
+/* 边栏当前章节颜色块 */
+:root:not([data-theme="dark"]) .toc-link.active {
+  background: var(--heo-chapter-color) !important;
+}
+
+/* 分类悬停特别修复 */
+:root:not([data-theme="dark"]) .card-category-list-link:hover {
+  color: #4c4948 !important;
+}
+
+/* 友情链接按钮 */
+:root:not([data-theme="dark"]) .flink-list-item::before {
+  background: #1f4fa3 !important;
+}
+
+/* 文章卡片按钮 */
+/* 默认状态 */
+.recent-post-item {
+  transition:
+    box-shadow 0.2s ease,
+    filter 0.2s ease,
+    border-color 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12) !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  cursor: pointer !important;
+}
+
+/* 悬停效果 */
+.recent-post-item:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18) !important;
+  border-color: #6bbf3a !important;
+  filter: brightness(1.03) !important;
+}
+
+/* 按下效果 */
+.recent-post-item:active {
+  box-shadow:
+    inset 0 3px 6px rgba(0, 0, 0, 0.25),
+    inset 0 1px 2px rgba(0, 0, 0, 0.18) !important;
+  filter: brightness(0.97) !important;
+}

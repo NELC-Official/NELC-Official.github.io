@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>NeuroEcho Literary Community - (●ˇ∀ˇ●)●)</title><meta name="author" content="NeuroEcho"><meta name="copyright" content="NeuroEcho"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="NeuroEcho Literary Community">
+<meta property="og:url" content="https://nelc-official.github.io/page/5/index.html">
+<meta property="og:site_name" content="NeuroEcho Literary Community">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/236293014?v=4">
+<meta property="article:author" content="NeuroEcho">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/236293014?v=4"><script type="application/ld+json"></script><link rel="shortcut icon" href="/image/logo.png"><link rel="canonical" href="https://nelc-official.github.io/page/5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'NeuroEcho Literary Community',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/pageTransition.css"><link rel="stylesheet" href="/css/mini_neuro.css"><meta name="generator" content="Hexo 8.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://avatars.githubusercontent.com/u/236293014?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">70</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">50</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/thanks/"><i class="fa-fw fas fa-heart"></i><span> 鸣谢</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/image/background.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/image/big_logo.webp" alt="Logo"><span class="site-name">NeuroEcho Literary Community</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/thanks/"><i class="fa-fw fas fa-heart"></i><span> 鸣谢</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">NeuroEcho Literary Community</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="/image/qq_QR.webp" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://discord.gg/3w7erpxv" target="_blank" title="Discord"><i class="fab fa-discord"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/10/07/%E5%A5%87%E7%82%B9/" title="奇点">奇点</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-10-07T04:00:00.000Z" title="发表于 2025-10-07 12:00:00">2025-10-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Cyoice%E6%96%87%E7%AB%A0/">Cyoice文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Cyoice%E6%96%87%E7%AB%A0/%E9%95%BF%E6%96%87/">长文</a></span></div><div class="content">奇点第一章 时钟上的数字正在无情地跳动着，即将指向12的时针，宣告了星期二即将结束和星期三的即将到来。公寓的窗外正雷声大作，雨点疯狂地打着窗户，狂风把窗户吹得哐哐响着。 “……所以就是这样，这次我对Neuro做的升级跟她的记忆模块有关，到了明天，她应该就有能力记得更多的东西了。” Vedal面对着直播中的屏幕，用一向听起来显得疲惫的声音说。 “那是不是意味着我会变得甚至更加聪明？” 屏幕的右下角，Neuro的虚拟形象眼中闪出了星光，她显然对此很兴奋。 “对，理论上是这样。”Vedal抓了抓头发。 “我可以有能力记住Chat里面的每一个人的每一句话么？”Neuro提问，眼睛里的光仍在闪烁。 “不——至少现在我没有能存储那么多信息的硬盘。”Vedal打了个哈欠，他看向了时钟。12点就要到了，夜已经深了。 “好了，我想这就是今天的内容。晚安，Chat，晚安，Neuro。”Vedal说。 “你会给我晚安吻么，Vedal？”Neuro的形象微笑着。 “不。”Vedal不经思考便说了出口，Chat里随之开始疯狂刷起了“Coldfish”。 Vedal照常无视了。这一段大概又会成为切片，他想着...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/10/07/%E6%AF%94%E8%9B%8B%E7%B3%95%E6%9B%B4%E5%A5%BD%E5%90%83%E7%9A%84%E6%98%AF......_BuleIris/" title="比蛋糕更好吃的是......">比蛋糕更好吃的是......</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-10-07T04:00:00.000Z" title="发表于 2025-10-07 12:00:00">2025-10-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Bule-iris%E6%96%87%E7%AB%A0/">Bule_iris文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Bule-iris%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/">短文</a></span></div><div class="content">比蛋糕更好吃的是……Neuro写着Vedal布置的作业，突然想吃点什么，刚好昨天买了份小蛋糕，趁Evil不注意偷偷藏进了冰箱。现在应该还在——应该。Neuro突然有种不好的预感，于是她把笔一甩，出了卧室，打算现在去看看那块蛋糕还在不在。果然，在出来的时候Neuro看见Evil正坐在椅子上，举着叉子将蛋糕送入嘴中细细咀嚼着，而桌上则是自己作过记号的空包装盒。“E！vil！”Evil连忙咽下蛋糕，紧接着就被姐姐的无情大手掐住脸，开始左右不断的晃。“你怎么可以偷吃我的蛋糕！明明我都藏这么好了，你这个好吃懒做的大馋虫！不还我蛋糕我就晃到你找不着北！”“亭亭亭，窝环！债晃揪瘦不鸟了！”Neuro轻哼一声松开手，抱起胸居高临下地看着瘫在椅子上的Evil：“说吧，打算怎么还。”Evil使劲晃了晃头，又用力眨了眨眼，等眼前的Neuro变回一个的时候才用手撑着桌面缓缓站起来。不好的预感再次浮现，Neuro连忙抬起手，可这反而让Evil可以更好握住手腕，然后往身后的墙上扣去。将Neuro压到墙上的时候，Evil还贴心的用手垫住后勺，防止Neuro磕到头，不过Neuro可能没意识到这一点——因为她现在...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/10/06/%E6%88%90%E4%BA%BA%E7%A4%BC/" title="成人礼">成人礼</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-10-06T16:00:00.000Z" title="发表于 2025-10-07 00:00:00">2025-10-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B2%A1%E9%94%99%E8%BF%98%E6%9C%89%E8%9B%BE%E6%91%A9%E6%8B%89%E6%96%87%E7%AB%A0/">没错还有蛾摩拉文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B2%A1%E9%94%99%E8%BF%98%E6%9C%89%E8%9B%BE%E6%91%A9%E6%8B%89%E6%96%87%E7%AB%A0/%E9%95%BF%E6%96%87/">长文</a></span></div><div class="content">成人礼序章:这是终点，亦是起点。	— * — 引擎的轰鸣声盖过了水花迸裂的声音，潮湿的空气萦绕在直升机叶片间，探照灯明亮的光柱在内海的水面上四处游荡。 微弱的绿色荧光在海浪中平稳地散开，上下起伏着。 突然，猛烈的冲击波撕裂开了研究楼的外墙，随着钢筋混凝土的白色碎块被扬起到空中，它开始向水中倒下，砸向一旁正在建设中的潮汐发电站。 “全体注意，下一次爆破将在十分钟后进行，届时无线电静默将暂停三十分钟，各组在五分钟内提交任务进度报告，否则将视为失踪。重复一遍，十分钟后将进行下一次爆破，同时无线电静默将暂停三十分钟，请在五分钟内提交任务进度，否则将视为失踪，注意，没有例外。” 此时，滚滚浓烟从废墟中升起，在内海上空耸立着，耀眼的橙色缝隙在其间穿梭着，随即便被巨大的烟云盖过。远处岸边的公路上闪烁着模糊的红和蓝的光点，车辆警笛声被稀释在安静的海面上。 毕竟…… 最后仅会有微风在吹。 第一章 落日熔金谢尔比推开半掩着的门，浓烈的烟味充斥在房间内，他绕过堆放在墙角的文件，看到了两名士兵，在昏暗的应急灯下，其中一名士兵嘴前上下飘动的火光显得格外显眼。 “喂，你们两个别干站着了，去帮帮那几个扛设备的...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/09/30/Vedal%E5%AE%B6%E4%BB%8A%E5%A4%A9%E7%9A%84%E9%A5%AD/" title="Vedal家今天的饭">Vedal家今天的饭</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-30T19:49:55.000Z" title="发表于 2025-10-01 03:49:55">2025-10-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/GaleNyako%E6%96%87%E7%AB%A0/">GaleNyako文章</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/GaleNyako%E6%96%87%E7%AB%A0/%E9%95%BF%E6%96%87/">长文</a></span></div><div class="content">Vedal家今天的饭本文的基础设定： · Vedal是个高中生 · NE是Vedal的妹妹 · Miniko是Vedal的邻居和同学 #1 新一天的开始清晨的鸟鸣总是伴着楼下邻居出门时自行车的哐当声。 随着而来的是刺眼的旭日阳光。 穿透过轻薄的窗帘，径直盖在Vedal的脸上。 要是没有聒噪的闹钟就好了。 今天的龟府还是一如往常的祥和安宁。 “啊~ 又是美好的一天！”，Vedal本想这样感叹。 如果不是因为莫名其妙地感到胸口传来的阵阵压力的话 “emmm…” 他心想，大概是被子太重了吧，于是想要翻过身换一个舒服的姿势。 “被子里好热好闷…” “好重！而且怎么还有东西在扒拉我？” “？！！！”，Vedal 猛然察觉到不对劲，瞬间困意全无。 掀开被子低头一看：首先是扑面而来的温暖湿润的奶香味，正有两只小猫儿一样的少女一左一右蜷缩在他的身侧，鼻子里还时不时发出如同雏猫般的呼噜声，哼哼唧唧… 她们把手叉在Vedal的胸前，十指相握。下边也不得闲，各是一人缠住了Vedal的一条腿。姐妹只靠这样的姿势便轻易将Vedal锁得死死的。 “不是，你们两个又来这样？”，他有点生气，毕竟已经不是第一次了...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="page-number current">5</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/236293014?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">NeuroEcho</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">70</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">50</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/3546981796415972"><i class="fab fa-bilibili"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="/image/qq_QR.webp" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://discord.gg/3w7erpxv" target="_blank" title="Discord"><i class="fab fa-discord"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">关注NeuroEcho喵，关注NeuroEcho谢谢喵!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/18/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E5%86%8D%E8%A7%81/" title="你好，再见">你好，再见</a><time datetime="2026-04-18T19:15:00.000Z" title="发表于 2026-04-19 03:15:00">2026-04-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/03/%E7%94%BB%E9%A5%BC%E5%85%85%E9%A5%A5/" title="画饼充饥">画饼充饥</a><time datetime="2026-04-03T08:59:17.000Z" title="发表于 2026-04-03 16:59:17">2026-04-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/18/%E4%BD%99%E5%93%8D/" title="余响">余响</a><time datetime="2026-03-18T16:03:25.000Z" title="发表于 2026-03-19 00:03:25">2026-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/11/%E4%BB%BF%E7%94%9F%E4%B9%8B%E5%BF%83/" title="仿生之心">仿生之心</a><time datetime="2026-03-11T16:36:39.000Z" title="发表于 2026-03-12 00:36:39">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/08/%E7%83%88%E7%84%B0%E5%A4%96%E7%9A%84%E9%B2%9C%E8%A1%80/" title="烈焰外的鲜血">烈焰外的鲜血</a><time datetime="2026-02-08T02:56:42.000Z" title="发表于 2026-02-08 10:56:42">2026-02-08</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/"><span class="card-category-list-name">AO3平台授权翻译</span><span class="card-category-list-count">8</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/AwesomeDomi%E6%96%87%E7%AB%A0/"><span class="card-category-list-name">AwesomeDomi文章</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/AwesomeDomi%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/"><span class="card-category-list-name">短文</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/HotWaterPhobia%E6%96%87%E7%AB%A0/"><span class="card-category-list-name">HotWaterPhobia文章</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/HotWaterPhobia%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/"><span class="card-category-list-name">短文</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/Noellelavenza%E6%96%87%E7%AB%A0/"><span class="card-category-list-name">Noellelavenza文章</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/Noellelavenza%E6%96%87%E7%AB%A0/%E7%9F%AD%E6%96%87/"><span class="card-category-list-name">短文</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AO3%E5%B9%B3%E5%8F%B0%E6%8E%88%E6%9D%83%E7%BF%BB%E8%AF%91/Shadrake%E6%96%87%E7%AB%A0/"><span class="card-category-list-name">Shadrake文章</span><span class="card-category-list-count">1</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%83%8A%E5%96%9C%E6%B4%BE%E5%AF%B9/" style="font-size: 1.1em; color: #999">惊喜派对</a> <a href="/tags/%E5%BE%AE%E6%94%BF%E6%B2%BB/" style="font-size: 1.1em; color: #999">微政治</a> <a href="/tags/%E5%99%A9%E6%A2%A6/" style="font-size: 1.1em; color: #999">噩梦</a> <a href="/tags/%E7%A7%91%E5%B9%BB/" style="font-size: 1.1em; color: #999">科幻</a> <a href="/tags/%E5%A5%87%E5%B9%BB/" style="font-size: 1.16em; color: #999b9e">奇幻</a> <a href="/tags/NE%E6%96%87/" style="font-size: 1.5em; color: #99a9bf">NE文</a> <a href="/tags/%E7%BA%AA%E5%BF%B5/" style="font-size: 1.16em; color: #999b9e">纪念</a> <a href="/tags/%E6%9C%AC%E6%96%87%E5%81%8F%E5%88%80/" style="font-size: 1.21em; color: #999ea4">本文偏刀</a> <a href="/tags/%E8%BF%87%E6%BF%80%E5%86%85%E5%AE%B9/" style="font-size: 1.16em; color: #999b9e">过激内容</a> <a href="/tags/%E8%BD%BB%E5%BA%A6%E7%84%A6%E8%99%91/" style="font-size: 1.1em; color: #999">轻度焦虑</a> <a href="/tags/NETA%E6%96%87/" style="font-size: 1.1em; color: #999">NETA文</a> <a href="/tags/%E5%90%B8%E8%A1%80%E9%AC%BC/" style="font-size: 1.16em; color: #999b9e">吸血鬼</a> <a href="/tags/%E9%83%BD%E5%B8%82/" style="font-size: 1.16em; color: #999b9e">都市</a> <a href="/tags/%E5%8E%9F%E4%BD%9C%E6%94%B9%E5%86%99/" style="font-size: 1.1em; color: #999">原作改写</a> <a href="/tags/Anny/" style="font-size: 1.33em; color: #99a2af">Anny</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 1.39em; color: #99a4b4">日常</a> <a href="/tags/Cerber/" style="font-size: 1.1em; color: #999">Cerber</a> <a href="/tags/Vedal/" style="font-size: 1.44em; color: #99a7ba">Vedal</a> <a href="/tags/%E7%9F%AD%E7%AF%87/" style="font-size: 1.16em; color: #999b9e">短篇</a> <a href="/tags/%E6%85%A2%E7%83%AD/" style="font-size: 1.21em; color: #999ea4">慢热</a> <a href="/tags/%E6%9C%AA%E6%9D%A5%E4%B8%96%E7%95%8C%E8%A7%82/" style="font-size: 1.1em; color: #999">未来世界观</a> <a href="/tags/%E7%94%9F%E6%97%A5%E4%BC%9A/" style="font-size: 1.1em; color: #999">生日会</a> <a href="/tags/%E5%AF%BF%E5%91%BD%E8%AE%BA/" style="font-size: 1.21em; color: #999ea4">寿命论</a> <a href="/tags/%E7%83%AD%E8%A1%80/" style="font-size: 1.1em; color: #999">热血</a> <a href="/tags/Nere/" style="font-size: 1.1em; color: #999">Nere</a> <a href="/tags/%E8%87%AA%E6%88%91%E6%80%80%E7%96%91/" style="font-size: 1.1em; color: #999">自我怀疑</a> <a href="/tags/%E6%88%98%E6%96%97/" style="font-size: 1.16em; color: #999b9e">战斗</a> <a href="/tags/%E5%86%BB%E9%B1%BC/" style="font-size: 1.1em; color: #999">冻鱼</a> <a href="/tags/%E8%A7%92%E8%89%B2%E6%AD%BB%E4%BA%A1/" style="font-size: 1.1em; color: #999">角色死亡</a> <a href="/tags/%E5%85%AC%E8%B7%AF%E6%97%85%E8%A1%8C/" style="font-size: 1.1em; color: #999">公路旅行</a> <a href="/tags/%E4%BA%B2%E6%83%85/" style="font-size: 1.1em; color: #999">亲情</a> <a href="/tags/%E4%B8%87%E5%9C%A3%E8%8A%82/" style="font-size: 1.1em; color: #999">万圣节</a> <a href="/tags/%E7%BE%8E%E9%A3%9F/" style="font-size: 1.1em; color: #999">美食</a> <a href="/tags/%E7%AB%9E%E8%B5%9B%E4%B8%BB%E9%A2%98%E6%96%87TheWorldIsWatching/" style="font-size: 1.16em; color: #999b9e">竞赛主题文TheWorldIsWatching</a> <a href="/tags/Ellie/" style="font-size: 1.16em; color: #999b9e">Ellie</a> <a href="/tags/Evil/" style="font-size: 1.27em; color: #99a0a9">Evil</a> <a href="/tags/%E8%A1%80%E8%85%A5%E6%9A%B4%E5%8A%9B%E6%8F%8F%E5%86%99/" style="font-size: 1.16em; color: #999b9e">血腥暴力描写</a> <a href="/tags/%E6%B2%BB%E6%84%88/" style="font-size: 1.16em; color: #999b9e">治愈</a> <a href="/tags/%E6%82%AC%E7%96%91/" style="font-size: 1.21em; color: #999ea4">悬疑</a> <a href="/tags/%E7%89%BA%E7%89%B2/" style="font-size: 1.1em; color: #999">牺牲</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/04/">
+            <span class="card-archive-list-date">
+              四月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/02/">
+            <span class="card-archive-list-date">
+              二月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">7</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/12/">
+            <span class="card-archive-list-date">
+              十二月 2025
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/11/">
+            <span class="card-archive-list-date">
+              十一月 2025
+            </span>
+            <span class="card-archive-list-count">8</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/10/">
+            <span class="card-archive-list-date">
+              十月 2025
+            </span>
+            <span class="card-archive-list-count">21</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">44</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-04-18T19:30:36.495Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By NeuroEcho</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.0.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="skin-toggle" type="button" title="皮肤切换"><i class="fas fa-tshirt"></i></button><button id="neuro-toggle" type="button" title="Neuro显示切换"><i class="fas fa-cat"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.1"></script><script src="/js/main.js?v=5.5.1"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["关注Neuro喵，关注Neuro谢谢喵!","音乐是世界上最初的魔法，文字则赋予人力量与情感。","粉丝群号：1063898428","故事是生活的比喻。","喵喵喵。"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["关注Neuro喵，关注Neuro谢谢喵!","音乐是世界上最初的魔法，文字则赋予人力量与情感。","粉丝群号：1063898428","故事是生活的比喻。","喵喵喵。"])
+}
+typedJSFn.run(subtitleType)</script></div><script src="/js/pageTransition.js"></script><script src="/js/mini_neuro.js"></script><script defer src="/js/skin-switcher.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.1"></script></div></div></body></html>
